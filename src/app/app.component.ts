@@ -9,6 +9,7 @@ import { HttpClient } from '@angular/common/http';
 export class AppComponent implements OnInit {
   query: string;
   persons: any;
+  currentPerson: object;
 
   /* To show all events
   in html template, add (click) = showPerson($event)
@@ -19,6 +20,7 @@ export class AppComponent implements OnInit {
   showPerson(item){
     this.query = item.name;
     item.highlight = !item.highlight;
+    this.currentPerson = item;
   }
 
   constructor( private http: HttpClient){
